@@ -1,6 +1,12 @@
+import kotlin.reflect.jvm.internal.impl.util.collectionUtils.ScopeUtilsKt;
+
 import java.util.Scanner;
 
 public class HienThiSoNguyen {
+    public int a() {
+        return 1;
+    }
+
     public static boolean checkSNT(int n) {
         if(n <= 1)
             return false;
@@ -13,7 +19,7 @@ public class HienThiSoNguyen {
         return true;
     }
 
-    public static void hienThi(int n){
+    public static void displayOrder(int n){
 
         if(n <= 0)
             System.out.println("-1");
@@ -30,10 +36,25 @@ public class HienThiSoNguyen {
         }
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("nhap so luong so nguyen to can in ra man hinh");
-        int a = scanner.nextInt();
-        hienThi(a);
+    public static void countNum(int n) {
+        if(n <= 0)
+            System.out.println("-1");
+        else {
+            int i = 0;
+            while(i < n) {
+                if(checkSNT(i)) {
+                    System.out.print( i + " ");
+                }
+                i++;
+            }
+        }
     }
+
+   public static void main(String[] args) {
+//       Scanner scanner = new Scanner(System.in);
+//       int a = scanner.nextInt();
+       displayOrder(20);
+       System.out.println();
+       countNum(100);
+   }
 }
